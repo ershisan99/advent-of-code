@@ -1,3 +1,5 @@
+import * as R from "remeda";
+
 export async function day2(input: string) {
 	const lines = input.split("\n");
 	let count = 0;
@@ -44,33 +46,10 @@ export async function day2part2(input: string) {
 }
 
 function isSafe(levels: number[]) {
-	let increasing = null;
-	let safe = true;
+	const diffs = R.zip(levels, levels.slice(1)).map(([a, b]) => a - b);
 
-	for (let i = 0; i < levels.length - 1; i++) {
-		const current = levels[i];
-		const next = levels[i + 1];
-		const diff = Math.abs(next - current);
-
-		if (diff > 3 || diff < 1) {
-			safe = false;
-			break;
-		}
-
-		if (i === 0) {
-			increasing = next > current;
-			continue;
-		}
-
-		if (increasing && next <= current) {
-			safe = false;
-			break;
-		}
-
-		if (!increasing && next >= current) {
-			safe = false;
-			break;
-		}
-	}
-	return safe;
+	return (
+		diffs.every((d) => 1 <= d && d <= 3) ||
+		diffs.every((d) => -1 >= d && d >= -3)
+	);
 }
