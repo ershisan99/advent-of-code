@@ -20,7 +20,6 @@ export function day4(input: string) {
 		diagonals.push(chars.join(""));
 	}
 
-	// Prlet diagonally right top to left bottom diagonal
 	for (let j = 0; j < lines.length; j++) {
 		const chars = [];
 
