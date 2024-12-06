@@ -1,24 +1,18 @@
+import math
 import os
 
-script_dir = os.path.dirname(__file__)  # <-- absolute dir the script is in
-rel_path = "./input.txt"
-# rel_path = "./test-input.txt"
-
-abs_file_path = os.path.join(script_dir, rel_path)
-
-input = open(abs_file_path).read()
-
+file_path = os.path.join(os.path.dirname(__file__), "./input.txt")
+input = open(file_path).read().strip()
 
 count = 0
-lines = input.splitlines()
-for line in lines:
-    dimensions = list(map(int, line.split("x")))
-    dimensions.sort()
-    [l, w, h] = dimensions
 
-    perimiter = l * 2 + w * 2
-    volume = l * w * h
+for line in input.splitlines():
+    dimensions = sorted(map(int, line.split("x")))
+    [x, y, z] = dimensions
+
+    perimiter = (x + y) * 2
+    volume = math.prod(dimensions)
+
     count += perimiter + volume
-print(count)
 
-# 48
+print(count)
