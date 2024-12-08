@@ -2,6 +2,9 @@
 	"name": "advent-of-code",
 	"module": "index.ts",
 	"type": "module",
+	"scripts": {
+		"prepare": "bun run scripts/prepare.ts"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "latest"
