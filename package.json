@@ -3,7 +3,7 @@
 	"module": "index.ts",
 	"type": "module",
 	"scripts": {
-		"prepare": "bun run scripts/prepare.ts"
+		"prepare-day": "bun run scripts/prepare.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
