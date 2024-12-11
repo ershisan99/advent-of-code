@@ -10,9 +10,9 @@ test("day 11, part 1", async () => {
 
 	console.log("\n\n");
 
-	// const testResult = part1(testInput);
-	// console.log("Test data:", testResult);
-	// expect(testResult).toEqual(55312);
+	const testResult = part1(testInput);
+	console.log("Test data:", testResult);
+	expect(testResult).toEqual(55312);
 
 	const finalResult = await part1(input);
 	console.log("Full data:", finalResult);
@@ -27,14 +27,9 @@ test("day 11, part 2", async () => {
 	).text();
 	const input = await Bun.file(path.resolve(__dirname, "input.txt")).text();
 
-	const testResult = part2(testInput);
-	console.log("\n\n");
-	console.log("Test data:", testResult);
-	expect(testResult).toEqual(0);
-
-	// const finalResult = part2(input);
-	// console.log("Full data:", finalResult);
-	// expect(finalResult).toEqual(0);
+	const finalResult = part2(input);
+	console.log("Full data:", finalResult);
+	expect(finalResult).toEqual(218279375708592);
 
 	console.log("\n\n");
 });
