@@ -21,10 +21,7 @@ for line in lines:
             if instruction == "turn on":
                 lights[(i, j)] += 1
             elif instruction == "turn off":
-                if lights[(i, j)] == 0:
-                    continue
-                else:
-                    lights[(i, j)] -= 1
+                lights[(i, j)] = max(0, lights[(i, j)] - 1)
             else:
                 lights[(i, j)] += 2
 
