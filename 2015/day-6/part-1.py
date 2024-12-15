@@ -24,7 +24,4 @@ for line in lines:
                 lights[(i, j)] = False
             else:
                 lights[(i, j)] = not lights[(i, j)]
-count = 0
-for v in lights.values():
-    count += v
-print(count)
+print(sum(lights.values()))

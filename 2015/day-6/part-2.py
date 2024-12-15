@@ -27,7 +27,5 @@ for line in lines:
                     lights[(i, j)] -= 1
             else:
                 lights[(i, j)] += 2
-count = 0
-for v in lights.values():
-    count += v
-print(count)
+
+print(sum(lights.values()))
